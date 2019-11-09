@@ -8,17 +8,19 @@ def haversine(lat1, lon1, lat2, lon2):
     return R * c
 
 class trip:
-    def __init__(self, lat, lon, time_start):
-        self.lat = lat
-        self.lon = lon
+    def __init__(self, start_lat, start_lon, end_lat, end_lon, time_start):
+        self.start_lat = start_lat
+        self.start_lon = start_lon
+        self.end_lat = end_lat
+        self.end_lon = end_lon
         self.time_start = time_start
 
 def get_score(my_trip, target, radius = 1, allowed_time_delta = 60):
-    start_dist = haversine(my_trip.lat,my_trip.lon,target.lat,target.lon)
+    start_dist = haversine(my_trip.start_lat,my_trip.start_lon,target.start_lat,target.start_lon)
     ##user specified filters
     if start_dist > radius:
         return 10000
-    end_dist = haversine(my_trip.lat,my_trip.lon,target.lat,target.lon)
+    end_dist = haversine(my_trip.end_lat,my_trip.end_lon,target.end_lat,target.end_lon)
     ##user specified filters
     if end_dist > radius:
         return 10000
