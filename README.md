@@ -8,7 +8,7 @@ In stage I of our app, starting from only traffic pattern, but no individual use
 
 In stage II, based on user engagement data collected in stage 1, we will have user preference ground truth data which can be used as labelled data in supervised learning algorithms. Namely, we will use deep learning based LearningToRank (LtR) algorithm to better find correct match for users and identify important (hidden) features that affect user's rider choice. The algorithm will generalize user preferences and optimize the top matchers for each user.
 
-In stage III, we will leverage on the large scale of collected data to help decision makers to improve public transportation planning，such as developing new bus routes to complement with/facilitate ride sharers for highly shared routes, and optimizing traffic light schedule for heavily overlapped routes.
+In stage III, we will leverage on the large scale of collected data to help decision makers to improve public transportation planning，such as developing new bus routes to complement with/facilitate ride sharers for highly shared routes, and optimizing traffic light schedule for heavily overlapped routes. Big data insights for decision making
 
 
 
