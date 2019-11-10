@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import {render} from 'react-dom';
-import {StaticMap} from 'react-map-gl';
+import React from 'react';
+import {HeatmapLayer} from '@deck.gl/aggregation-layers';
 import DeckGL from '@deck.gl/react';
 import {GeoJsonLayer, PolygonLayer} from '@deck.gl/layers';
 import {LightingEffect, AmbientLight, _SunLight as SunLight} from '@deck.gl/core';
@@ -9,8 +8,10 @@ import logo from './logo.svg';
 import data from './vancouver-blocks.json'
 import './App.css';
 
+import headData from './data/crime'
 
 function App() {
+
   const COLOR_SCALE = scaleThreshold()
   .domain([-0.6, -0.45, -0.3, -0.15, 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2])
   .range([
@@ -35,8 +36,21 @@ function App() {
   }
 
   const _renderLayers = () => {
-
+    const intensity = 1, threshold = 0.03, radiusPixels = 30;
     return [
+      // new HeatmapLayer({
+      //   headData,
+      //   id: 'heatmp-layer',
+      //   opacity: 1,
+      //   pickable: false,
+      //   getPosition: d => {
+      //     console.log(d);
+      //     return [d.lat, d.lng]},
+      //   getWeight: d => d.weight,
+      //   radiusPixels,
+      //   intensity,
+      //   threshold
+      // }),
       new GeoJsonLayer({
         id: 'geojson',
         data,
@@ -45,7 +59,7 @@ function App() {
         filled: true,
         extruded: true,
         wireframe: true,
-        getElevation: f => Math.sqrt(f.properties.valuePerSqm) * 10,
+        getElevation: 70,
         getFillColor: f => COLOR_SCALE(f.properties.growth),
         getLineColor: [255, 255, 255],
         pickable: true,
