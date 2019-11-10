@@ -10,5 +10,5 @@ In stage II, based on user engagement data collected in stage 1, we will have us
 
 In stage III, we will leverage on the large scale of collected data to help decision makers to improve public transportation planning，such as developing new bus routes to complement with/facilitate ride sharers for highly shared routes, and optimizing traffic light schedule for heavily overlapped routes. Big data insights for decision making
 
-
-
+Presentation Slides:
+https://docs.google.com/presentation/d/1OUSJgYWSwYJofaPPI5oK66Ken8LTpvfWcmoL2AjK2-E/edit?usp=sharing
